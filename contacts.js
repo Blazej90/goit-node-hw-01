@@ -1,12 +1,10 @@
-// contacts.js
-
 const fs = require("fs");
 const path = require("path");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
-/**
- * Funkcja listująca wszystkie kontakty
+/*
+Funkcja - lista kontaktów
  */
 function listContacts() {
   fs.readFile(contactsPath, "utf8", (err, data) => {
@@ -19,6 +17,9 @@ function listContacts() {
   });
 }
 
+/* 
+Funkcja - wyszukiwanie kontatów po ID
+*/
 function getContactById(contactId) {
   fs.readFile(contactsPath, "utf8", (err, data) => {
     if (err) {
@@ -38,10 +39,9 @@ function getContactById(contactId) {
   });
 }
 
-/**
- * Funkcja usuwająca kontakt o podanym ID
- * @param {string|number} contactId - ID kontaktu do usunięcia
- */
+/*
+Funkcja - usuwanie kontaktów po ID
+*/
 function removeContact(contactId) {
   fs.readFile(contactsPath, "utf8", (err, data) => {
     if (err) {
@@ -62,12 +62,9 @@ function removeContact(contactId) {
   });
 }
 
-/**
- * Funkcja dodająca nowy kontakt
- * @param {string} name - Imię i nazwisko nowego kontaktu
- * @param {string} email - Adres email nowego kontaktu
- * @param {string} phone - Numer telefonu nowego kontaktu
- */
+/*
+Funkcja - dodawanie nowego kontaktu
+*/
 function addContact(name, email, phone) {
   fs.readFile(contactsPath, "utf8", (err, data) => {
     if (err) {
