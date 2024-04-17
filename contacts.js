@@ -28,6 +28,7 @@ function getContactById(contactId) {
     const contacts = JSON.parse(data);
     const contact = contacts.find((c) => {
       if (typeof contactId === "number") {
+        console.log(c.id, contactId);
         return c.id === contactId;
       } else {
         return c.id.toLowerCase() === contactId.toLowerCase();
