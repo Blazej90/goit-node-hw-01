@@ -30,7 +30,7 @@ function invokeAction({ action, id, name, email, phone }) {
         console.error("Please provide ID for get action.");
         return;
       }
-      getContactById(parseInt(id));
+      getContactById(id);
       break;
 
     case "add":
